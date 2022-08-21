@@ -1,0 +1,17 @@
+.popup-infotooltip__wrapper {
+  width: 430px;
+  height: 330px;
+  background: #ffffff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 500px) {
+  .popup-infotooltip__wrapper {
+    width: 280px;
+    height: 308px;
+  }
+}

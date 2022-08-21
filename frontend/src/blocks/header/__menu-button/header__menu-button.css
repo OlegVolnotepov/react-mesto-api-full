@@ -1,0 +1,15 @@
+.header__menu-button {
+  display: none;
+  background-color: inherit;
+  border: 0;
+}
+
+@media (max-width: 500px) {
+  .header__menu-button {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-right: 11px;
+    margin-top: 40px;
+  }
+}

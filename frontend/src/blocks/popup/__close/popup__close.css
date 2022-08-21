@@ -1,0 +1,22 @@
+.popup__close {
+  cursor: pointer;
+  border: 0;
+  outline: none; /* Для синий ободки */
+  background: transparent;
+  position: relative;
+  right: -100%;
+  top: -98%;
+}
+
+.popup__close:hover {
+  filter: opacity(.6);
+  transition: .3s;
+}
+
+@media (max-width: 530px) {
+  .popup__close {
+    right: -90%;
+    top: -102%;
+  }
+}
+

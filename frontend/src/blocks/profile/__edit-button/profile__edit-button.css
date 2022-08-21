@@ -1,0 +1,16 @@
+.profile__edit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 0;
+  outline: none; /* Для синий ободки */
+  background: transparent;
+}
+
+@media (max-width: 440px) {
+  .profile__edit-button {
+    display: block;
+    padding: 0;
+  }
+}

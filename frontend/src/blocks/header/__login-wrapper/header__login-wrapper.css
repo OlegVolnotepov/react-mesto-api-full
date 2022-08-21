@@ -1,0 +1,7 @@
+.header__login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 36px;
+}

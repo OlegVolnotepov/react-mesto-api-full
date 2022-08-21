@@ -1,0 +1,27 @@
+.popup__input {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  width: 83.2%;
+  border-bottom: 1px solid #d6d1d1;
+  line-height: 1.5;
+  margin-top: 54px;
+  font-size: 14px;
+}
+
+/* .popup__input:nth-child(3){
+  margin-top: 30px;
+} */
+
+@media (max-width: 530px) {
+  .popup__input {
+    margin-left: 22px;
+    margin-right: 22px;
+    margin-top: 75px;
+    line-height: 1.7;
+  }
+}
+.popup__input_url {
+  margin-top: 30px;
+}

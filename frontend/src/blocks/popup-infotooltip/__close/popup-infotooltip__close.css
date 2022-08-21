@@ -1,0 +1,16 @@
+.popup-infotooltip__close {
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  background: transparent;
+  position: relative;
+  right: -57%;
+  top: -98%;
+}
+
+@media (max-width: 500px) {
+  .popup-infotooltip__close {
+    right: -44%;
+    top: -104%;
+  }
+}

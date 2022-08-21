@@ -1,0 +1,10 @@
+.profile__wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 760px) {
+  .profile__wrapper{
+   flex-direction: column;
+  }
+}

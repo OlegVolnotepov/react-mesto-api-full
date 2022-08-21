@@ -1,0 +1,9 @@
+.header__opened-menu {
+  height: 142px;
+  border-bottom: 1px solid #545454;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}

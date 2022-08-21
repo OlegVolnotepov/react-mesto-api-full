@@ -1,0 +1,26 @@
+.elements {
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  max-width: 880px;
+  flex-wrap: wrap;
+  margin-top: 51px;
+  gap: 17px;
+}
+
+@media (max-width: 920px) {
+  .elements {
+    margin-left: 19px;
+    margin-right: 19px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 320px) {
+  .elements {
+    margin-left: 19px;
+    margin-right: 19px;
+    margin-top: 36px;
+    gap: 21px;
+  }
+}

@@ -1,0 +1,21 @@
+.popup__error {
+  position: absolute;
+  display: block;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ff0000;
+  margin: 0 auto;
+  margin-left: 36px;
+  max-width: 400px;
+}
+
+@media (max-width: 530px) {
+  .popup__error {
+    padding: 0;
+    margin-left: 22px;
+    max-width: 250px;
+    font-size: 10px;
+  }
+}

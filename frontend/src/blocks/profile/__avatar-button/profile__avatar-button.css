@@ -1,0 +1,29 @@
+.profile__avatar-button {
+  background-image: url('../../../images/pen.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 120px;
+  height: 120px;
+  border: 0;
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  transition: .2s ease-in-out;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+
+}
+
+.profile__avatar-button:hover {
+  background-color: #000;
+  opacity: .8;
+}
+
+@media (max-width: 760px) {
+  .profile__avatar-button {
+    top: 43.4%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

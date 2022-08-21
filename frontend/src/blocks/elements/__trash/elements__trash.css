@@ -1,0 +1,22 @@
+.elements__trash {
+  position: absolute;
+  width: 23px;
+  display: block;
+  top: 10px;
+  right: 10px;
+  padding: 0;
+  background-image: url(../../../images/trash.svg);
+  background-repeat: no-repeat;
+  height: 30px;
+  border: 0;
+  background-color: inherit;
+  background-position: center;
+  cursor: pointer;
+  filter: drop-shadow(0 0 0.9rem black);
+  visibility: hidden;
+}
+
+.elements__trash:hover {
+  filter: drop-shadow(0 0 0.9rem black) opacity(0.5);
+  transition: 0.4s;
+}

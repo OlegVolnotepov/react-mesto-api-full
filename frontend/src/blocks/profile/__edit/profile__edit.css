@@ -1,0 +1,21 @@
+.profile__edit {
+  height: 24px;
+  width: 24px;
+  border: 1px solid #FFFFFF;
+  align-self: center;
+}
+
+.profile__edit:hover {
+  opacity: .6;
+  transition: .3s;
+}
+
+@media (max-width: 440px) {
+  .profile__edit {
+    margin: auto;
+    position: absolute;
+    right: 40px;
+    width: 18px;
+    height: 18px;
+  }
+}

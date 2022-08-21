@@ -1,0 +1,16 @@
+@media (max-width: 500px) {
+  .header_open {
+    height: 225px;
+    animation: fadeIn 0.1s linear;
+    overflow: hidden;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    height: 0;
+  }
+  to {
+    height: 225px;
+  }
+}
