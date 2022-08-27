@@ -107,11 +107,18 @@ class Api {
 }
 
 const api = new Api({
-  url: 'http://api.volnotepov.students.nomoredomains.sbs',
+  url: 'https://api.volnotepov.students.nomoredomains.sbs',
   headers: {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${JWT}`,
   },
 });
+// const api = new Api({
+//   url: 'http://localhost:3000',
+//   headers: {
+//     'Content-Type': 'application/json',
+//     Authorization: `Bearer ${JWT}`,
+//   },
+// });
 
 export default api;
