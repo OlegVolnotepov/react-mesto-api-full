@@ -20,16 +20,6 @@ class Api {
     }).then((res) => this._checkResponse(res));
   }
 
-  // addNewCard(name, url) {
-  //   return fetch(`${this._url}/cards`, {
-  //     method: 'POST',
-  //     headers: this._headers,
-  //     body: JSON.stringify({
-  //       name: name,
-  //       link: url,
-  //     }),
-  //   }).then((res) => this._checkResponse(res));
-  // }
   addNewCard(name, url) {
     return fetch(`${this._url}/cards`, {
       method: 'POST',
@@ -44,11 +34,6 @@ class Api {
     }).then((res) => this._checkResponse(res));
   }
 
-  // getUser() {
-  //   return fetch(`${this._url}/users/me`, {
-  //     headers: this._headers,
-  //   }).then((res) => this._checkResponse(res));
-  // }
   getUser() {
     return fetch(`${this._url}/users/me`, {
       headers: {

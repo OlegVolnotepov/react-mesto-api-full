@@ -1,6 +1,7 @@
 import React from 'react';
 //export const BASE_URL = 'https://auth.nomoreparties.co';
-export const BASE_URL = 'http://localhost:3000';
+//export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'http://api.volnotepov.students.nomoredomains.sbs';
 
 //const JWT = localStorage.getItem('token');
 
@@ -29,22 +30,6 @@ export const auth = (email, password) => {
     },
     body: JSON.stringify({ password, email }),
   }).then((response) => checkResponse(response));
-  // .then((response) => {
-  //   try {
-  //     if (response.status === 200) {
-  //       return response.json();
-  //     }
-  //   } catch (e) {
-  //     return e;
-  //   }
-  // })
-  // .then((res) => {
-  //   if (res.jwt) {
-  //     localStorage.setItem('token', res.token);
-  //     return res;
-  //   }
-  //   return;
-  // });
 };
 
 export const checkValidityToken = (JWT) => {
@@ -55,16 +40,4 @@ export const checkValidityToken = (JWT) => {
       Authorization: `Bearer ${JWT}`,
     },
   }).then((response) => checkResponse(response));
-  // .then((response) => {
-  //   try {
-  //     if (response.status === 200) {
-  //       return response.json();
-  //     }
-  //   } catch (e) {
-  //     return e;
-  //   }
-  // })
-  // .then((res) => {
-  //   return res;
-  // });
 };
