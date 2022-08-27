@@ -9,10 +9,7 @@ import AddPlacePopup from './AddPlacePopup';
 import ImagePopup from './ImagePopup';
 import DeletePopup from './DeletePopup';
 import api from '../utils/Api';
-import {
-  CurrentUserContext,
-  currentUser,
-} from '../contexts/CurrentUserContext';
+import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import Login from './Login';
 import Register from './Register';
 import ProtectedRoute from './ProtectedRoute';
@@ -35,22 +32,18 @@ function App() {
   let navigate = useNavigate();
   const [cards, setCards] = useState([]);
 
-  useEffect(() => {
-    getCards();
-  }, [loggedIn]);
-
   function getCards() {
     if (loggedIn) {
       api
         .getAllCards()
         .then((data) => {
           setCards(
-            data.map((item) => ({
+            data.reverse().map((item) => ({
               name: item.name,
               link: item.link,
               likes: item.likes,
               id: item._id,
-              owner: item.owner._id,
+              owner: item.owner,
             }))
           );
         })
@@ -65,9 +58,13 @@ function App() {
     checkResponse();
   }, []);
 
+  useEffect(() => {
+    getCards();
+  }, [loggedIn]);
+
   function handleCardLike(card, cardId) {
     // Снова проверяем, есть ли уже лайк на этой карточке
-    const isLiked = card.some((i) => i._id === currentUser._id);
+    const isLiked = card.some((i) => i === currentUser._id);
     // Отправляем запрос в API и получаем обновлённые данные карточки
 
     api
@@ -78,7 +75,7 @@ function App() {
           link: data.link,
           likes: data.likes,
           id: data._id,
-          owner: data.owner._id,
+          owner: data.owner,
         };
         setCards((state) => state.map((c) => (c.id === cardId ? newCard : c)));
       })
@@ -209,7 +206,6 @@ function App() {
   }
 
   function handleRegister(email, password) {
-    //console.log('handleRegister', email, password);
     register(email, password)
       .then((res) => {
         setinfotooltipOpen(true);
@@ -226,7 +222,7 @@ function App() {
   function handleLogin(email, password) {
     auth(email, password)
       .then((res) => {
-        localStorage.setItem('jwt', res.token);
+        localStorage.setItem('jwt', res.JWT);
         setLoggedIn(true);
         setEmail(email);
         navigate('/');
@@ -241,7 +237,7 @@ function App() {
     if (localStorage.getItem('jwt')) {
       checkValidityToken(localStorage.getItem('jwt'))
         .then((res) => {
-          setEmail(res.data.email);
+          setEmail(res.email);
           setLoggedIn(true);
           navigate('/');
         })

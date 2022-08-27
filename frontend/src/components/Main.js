@@ -18,53 +18,49 @@ function Main({
 
   return (
     <main>
-      <section className="profile">
-        <div className="profile__wrapper">
+      <section className='profile'>
+        <div className='profile__wrapper'>
           <img
             src={currentUser.avatar}
-            className="profile__avatar"
-            alt="аватар."
+            className='profile__avatar'
+            alt='аватар.'
           />
           <button
             onClick={onEditAvatar}
-            className="profile__avatar-button"
+            className='profile__avatar-button'
           ></button>
-          <div className="profile__info">
-            <div className="profile__name-wrapper">
-              <h1 className="profile__name">{currentUser.name}</h1>
+          <div className='profile__info'>
+            <div className='profile__name-wrapper'>
+              <h1 className='profile__name'>{currentUser.name}</h1>
               <button
                 onClick={onEditProfile}
-                className="profile__edit-button"
-                type="button"
+                className='profile__edit-button'
+                type='button'
               >
                 <img
-                  className="profile__edit"
+                  className='profile__edit'
                   src={editButtonPath}
-                  alt="кнопка редактирования профиля."
+                  alt='кнопка редактирования профиля.'
                 />
               </button>
             </div>
-            <p className="profile__about">{currentUser.about}</p>
+            <p className='profile__about'>{currentUser.about}</p>
           </div>
         </div>
-        <button onClick={onAddPlace} className="profile__add-button">
-          <img src={plusButtonPath} alt="кнопка Добавить." />
+        <button onClick={onAddPlace} className='profile__add-button'>
+          <img src={plusButtonPath} alt='кнопка Добавить.' />
         </button>
       </section>
       <div>
-        <ul className="elements">
+        <ul className='elements'>
           {cards.map((card) => (
             //<Card key={card.id} {...card} onCardClick={test} />
             <Card
               key={card.id}
-              id={card.id}
-              src={card.link}
-              title={card.name}
               onCardClick={onCardClick}
-              likes={card.likes}
-              owner={card.owner}
               onCardLike={onCardLike}
               onCardDelete={onCardDelete}
+              cards={card}
             />
           ))}
         </ul>

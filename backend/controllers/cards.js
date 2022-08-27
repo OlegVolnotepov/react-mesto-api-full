@@ -22,7 +22,7 @@ const deleteCard = (req, res, next) => {
       }
       if (cards.owner.valueOf() !== req.user._id) {
         return next(
-          new ForbiddenError('Можно удалять только вами созданные карточки'),
+          new ForbiddenError('Можно удалять только вами созданные карточки')
         );
       }
       return Cards.findByIdAndRemove(req.params.cardId)
@@ -57,7 +57,7 @@ const likeCard = (req, res, next) => {
   Cards.findByIdAndUpdate(
     cardIds,
     { $addToSet: { likes: req.user._id } },
-    { new: true, runValidators: true },
+    { new: true, runValidators: true }
   )
     .then((card) => {
       if (!card) {
@@ -73,7 +73,7 @@ const deleteLike = (req, res, next) => {
   Cards.findByIdAndUpdate(
     cardIds,
     { $pull: { likes: req.user._id } },
-    { new: true, runValidators: true },
+    { new: true, runValidators: true }
   )
     .then((card) => {
       if (!card) {

@@ -109,6 +109,7 @@ const updateUser = (req, res, next) => {
 };
 
 const updateAvatar = (req, res, next) => {
+  //return res.send(req.body);
   const userId = req.user;
   User.findByIdAndUpdate(
     userId,
@@ -146,6 +147,7 @@ const getCurrentUser = (req, res, next) => {
         about: user.about,
         avatar: user.avatar,
         email: user.email,
+        _id: user._id,
       });
     })
     .catch(next);
