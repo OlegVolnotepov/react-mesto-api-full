@@ -183,12 +183,13 @@ function App() {
     api
       .addNewCard(name, url)
       .then((data) => {
+        console.log(data);
         const newCard = {
           name: data.name,
           link: data.link,
           likes: data.likes,
           id: data._id,
-          owner: data.owner._id,
+          owner: data.owner,
         };
         setCards([newCard, ...cards]);
         closeAllPopups();
